@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlwibu2wjr2gp"
-path="res://.godot/imported/Player Placeholder.png-c6aa1c6ed9b57ed009144842991b4519.ctex"
+uid="uid://4yqfqx8kragd"
+path="res://.godot/imported/16x16 Steel Tileset.png-6159a46c6c49faa89ac7dee838da3296.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Player Placeholder.png"
-dest_files=["res://.godot/imported/Player Placeholder.png-c6aa1c6ed9b57ed009144842991b4519.ctex"]
+source_file="res://assets/tilemap/16x16 Steel Tileset.png"
+dest_files=["res://.godot/imported/16x16 Steel Tileset.png-6159a46c6c49faa89ac7dee838da3296.ctex"]
 
 [params]
 

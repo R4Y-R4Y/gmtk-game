@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cx3tahj3w10t4"
-path="res://.godot/imported/quaver.ttf-622346467ad2c22cdfeada7c8d5f56e4.fontdata"
+path="res://.godot/imported/quaver.ttf-6d71d0b750673da3a6ae134c1ee0d2c4.fontdata"
 
 [deps]
 
-source_file="res://assets/quaver.ttf"
-dest_files=["res://.godot/imported/quaver.ttf-622346467ad2c22cdfeada7c8d5f56e4.fontdata"]
+source_file="res://assets/font/quaver.ttf"
+dest_files=["res://.godot/imported/quaver.ttf-6d71d0b750673da3a6ae134c1ee0d2c4.fontdata"]
 
 [params]
 
