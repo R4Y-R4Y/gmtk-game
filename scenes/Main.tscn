@@ -10,6 +10,7 @@
 
 [node name="Player" parent="." instance=ExtResource("2_r0du0")]
 position = Vector2(-1, -22)
+wallJump = false
 
 [node name="Clone" parent="." instance=ExtResource("2_0bbpv")]
 position = Vector2(62, -22)
