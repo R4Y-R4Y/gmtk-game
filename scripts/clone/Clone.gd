@@ -6,7 +6,7 @@ var load_data : Dictionary = Dictionary()
 var count = 0
 var is_playing = false
 var playback_timer = 0.0
-
+var play_reverse = false
 @onready var ani = $AnimatedSprite2D
 
 func _ready():
@@ -30,15 +30,15 @@ func _physics_process(_delta):
 		get_recording()
 
 func get_recording():
-	count += 1
+	count += -1 if play_reverse else 1
 	var test = load_data.get(str(count))
 	if test != null:
 		ani.play(test[0])
 		global_position = str_to_var("Vector2" + str(test[1]))
-		ani.flip_h = test[2]
+		ani.flip_h = !test[2] if play_reverse else test[2]
 	else:
 		# End of recording data
-		count = 0
+		play_reverse = !play_reverse
 		print("Clone playback finished, repeating steps")
 	
 	

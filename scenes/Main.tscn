@@ -10,7 +10,6 @@
 
 [node name="Player" parent="." instance=ExtResource("2_r0du0")]
 position = Vector2(-1, -22)
-recordingFrequency = 60.0
 
 [node name="Clone" parent="." instance=ExtResource("2_0bbpv")]
 position = Vector2(62, -22)

@@ -20,8 +20,6 @@ var currentClone : Clone
 
 ##Period for recording player's actions in seconds
 @export_range(1, 10) var recordingDuration: float = 3.0
-##How often to record data per second
-@export_range(10, 60) var recordingFrequency: float = 30.0
 
 func _ready():
 	super._ready()
@@ -36,11 +34,8 @@ func _physics_process(delta: float) -> void:
 	
 	if is_recording:
 		recording_timer += delta
-		
-		# Record player state at the specified frequency
-		if count % int(60.0 / recordingFrequency) == 0:
-			count += 1
-			save_data[str(count)] = [ani.animation, global_position, ani.flip_h]
+		count += 1
+		save_data[str(count)] = [ani.animation, global_position, ani.flip_h]
 		
 		# Stop recording after the duration
 		if recording_timer >= recordingDuration:
@@ -51,7 +46,6 @@ func start_recording():
 	recording_timer = 0.0
 	count = 0
 	save_data.clear()
-	save_data["0"] = ["nothing", Vector2(0,0), false]
 	print("Recording started...")
 
 func stop_recording():
