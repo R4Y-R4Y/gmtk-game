@@ -1,9 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://bfbj5jxc1poj4"]
+[gd_scene load_steps=19 format=3 uid="uid://bfbj5jxc1poj4"]
 
-[ext_resource type="Script" uid="uid://coogpupstni13" path="res://scripts/player/PlatformerController2D.gd" id="1_qlg0r"]
+[ext_resource type="Script" uid="uid://2icmwecnyrjn" path="res://scripts/RecordingController.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://bkanwoyqkgii0" path="res://assets/player/Player Placeholder Small.png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dlwibu2wjr2gp" path="res://assets/player/Player Placeholder.png" id="3_fjrip"]
-[ext_resource type="Script" uid="uid://lvibrq5yv82e" path="res://scripts/player/Options Menu.gd" id="4_smehm"]
 [ext_resource type="Texture2D" uid="uid://wutfg3ihbpb2" path="res://assets/player/playersheet.png" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://bo8mpyia0rcwp" path="res://scripts/player/sliderLabel.gd" id="5_ur7pv"]
 
@@ -199,13 +198,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
-size = Vector2(30, 44)
+size = Vector2(20, 44)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
 script = ExtResource("1_qlg0r")
 PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
 directionalSnap = true
+wallJump = true
 run = true
 jump = true
 idle = true
@@ -219,8 +219,9 @@ roll = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y4r1p")
-animation = &"crouch_idle"
+animation = &"walk"
 autoplay = "idle"
+frame_progress = 0.416564
 offset = Vector2(0.675, -2.39)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -246,6 +247,7 @@ position = Vector2(0, -27)
 zoom = Vector2(2, 2)
 
 [node name="VScrollBar" type="VScrollBar" parent="Camera2D"]
+visible = false
 offset_left = 209.0
 offset_top = -243.0
 offset_right = 217.0
@@ -255,6 +257,7 @@ step = 1.0
 page = 50.0
 
 [node name="Tab" type="Button" parent="Camera2D"]
+visible = false
 offset_left = 193.0
 offset_top = -244.0
 offset_right = 209.0
@@ -262,14 +265,10 @@ offset_bottom = -220.0
 focus_mode = 0
 text = ">"
 
-[node name="Options Menu" type="CanvasGroup" parent="Camera2D" node_paths=PackedStringArray("player", "lcast", "mcast", "rcast")]
+[node name="Options Menu" type="CanvasGroup" parent="Camera2D"]
+visible = false
 z_index = 1000
 position = Vector2(218, -244)
-script = ExtResource("4_smehm")
-player = NodePath("../..")
-lcast = NodePath("../../lCast")
-mcast = NodePath("../../mCast")
-rcast = NodePath("../../rCast")
 
 [node name="MarginContainer" type="MarginContainer" parent="Camera2D/Options Menu"]
 offset_left = -1.0
