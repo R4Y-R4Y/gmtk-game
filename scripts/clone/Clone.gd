@@ -43,9 +43,10 @@ func check_player_crushing():
 	
 	var dot_product = global_position.direction_to(player_reference.global_position).dot(Vector2.RIGHT)
 	var distance = global_position.distance_to(player_reference.global_position)
-	# Check if clone and player are overlapping
-	if global_position.distance_to(player_reference.global_position) < 50 && -0.22 < dot_product and dot_product < 0.22: # Adjust distance as needed
-		# More precise collision check using collision shapes
+	var vector_player_clone = global_position - player_reference.global_position
+
+	if distance < 50 && -.22 < dot_product and dot_product < .22 and vector_player_clone.y < 0:
+
 		var space_state = get_world_2d().direct_space_state
 		var query = PhysicsShapeQueryParameters2D.new()
 		query.shape = collision.shape
