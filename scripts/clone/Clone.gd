@@ -23,6 +23,7 @@ func start_playback():
 	is_playing = true
 	count = 0
 	playback_timer = 0.0
+	play_reverse = false
 	print("Clone starting playback...")
 
 func _physics_process(_delta):

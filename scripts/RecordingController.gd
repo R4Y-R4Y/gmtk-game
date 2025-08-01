@@ -37,7 +37,6 @@ func _physics_process(delta: float) -> void:
 		count += 1
 		save_data[str(count)] = [ani.animation, global_position, ani.flip_h]
 		
-		# Stop recording after the duration
 		if recording_timer >= recordingDuration:
 			stop_recording()
 
