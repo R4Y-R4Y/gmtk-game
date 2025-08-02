@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfbj5jxc1poj4"]
 
-[ext_resource type="Script" uid="uid://2icmwecnyrjn" path="res://scripts/RecordingController.gd" id="1_qlg0r"]
+[ext_resource type="Script" path="res://scripts/RecordingController.gd" id="1_qlg0r"]
 [ext_resource type="SpriteFrames" uid="uid://numjmqd21b8v" path="res://assets/spriteframes/doctor.tres" id="2_76oj4"]
 [ext_resource type="Script" uid="uid://bo8mpyia0rcwp" path="res://scripts/player/sliderLabel.gd" id="5_ur7pv"]
 

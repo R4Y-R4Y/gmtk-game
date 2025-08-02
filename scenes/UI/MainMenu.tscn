@@ -1,46 +1,132 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8aijawu1kg0j"]
+[gd_scene load_steps=4 format=3 uid="uid://b8aijawu1kg0j"]
 
 [ext_resource type="Script" uid="uid://dt3b5snmtayn7" path="res://scripts/UI/MainMenu.cs" id="1_11hie"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1"]
+emission_shape = 3
+emission_box_extents = Vector3(1000, 10, 0)
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, -5, 0)
+scale_min = 0.3
+scale_max = 1.5
+color = Color(1, 1, 1, 0.8)
 
 [node name="MainMenu" type="Node2D"]
 
 [node name="MainMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 143.0
-offset_top = 288.0
-offset_right = 1875.0
-offset_bottom = 1261.0
-scale = Vector2(0.769372, 0.714082)
+offset_left = 77.0
+offset_top = -3.0
+offset_right = 1809.0
+offset_bottom = 970.0
+scale = Vector2(1.2, 1.114)
 script = ExtResource("1_11hie")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+[node name="ColorRect" type="ColorRect" parent="MainMenu"]
 layout_mode = 0
-offset_left = 426.0
-offset_top = 18.0
-offset_right = 965.0
-offset_bottom = 537.0
-scale = Vector2(1.77131, 2.76)
-alignment = 1
+offset_left = -473.113
+offset_top = -707.202
+offset_right = -433.113
+offset_bottom = -667.202
+scale = Vector2(69.0325, 88917.7)
+color = Color(0, 0, 0, 1)
 
-[node name="New Game" type="Button" parent="MainMenu/VBoxContainer"]
-custom_minimum_size = Vector2(-0.05, 0)
-layout_mode = 2
-size_flags_vertical = 8
-text = "New Game"
+[node name="BackgroundParticles" type="GPUParticles2D" parent="MainMenu"]
+modulate = Color(1, 1, 1, 0.6)
+material = SubResource("CanvasItemMaterial_1")
+position = Vector2(715.833, 868.043)
+amount = 150
+lifetime = 15.0
+preprocess = 3.0
+visibility_rect = Rect2(-1200, -200, 2400, 1400)
+process_material = SubResource("ParticleProcessMaterial_1")
 
-[node name="Load Game" type="Button" parent="MainMenu/VBoxContainer"]
-layout_mode = 2
-text = "Load game"
+[node name="StartNewGame" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.299753
+offset_top = 47.0522
+offset_right = 140.3
+offset_bottom = 71.0522
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(-1, 0)
+text = "Start New Game"
 
-[node name="Settings" type="Button" parent="MainMenu/VBoxContainer"]
-layout_mode = 2
+[node name="LoadGame" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.299753
+offset_top = 110.306
+offset_right = 94.2998
+offset_bottom = 134.306
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(-1, 0)
+text = "Load Game"
+
+[node name="Settings" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.299753
+offset_top = 167.722
+offset_right = 78.2998
+offset_bottom = 191.722
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(-1, 0)
 text = "Settings"
 
-[node name="Credits" type="Button" parent="MainMenu/VBoxContainer"]
-layout_mode = 2
+[node name="Credits" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.299753
+offset_top = 229.34
+offset_right = 68.2998
+offset_bottom = 253.34
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(-1, 0)
 text = "Credits"
 
-[node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
-layout_mode = 2
-text = "Exit"
+[node name="Exit" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 0.299753
+offset_top = 285.355
+offset_right = 88.2998
+offset_bottom = 309.355
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(-1, 0)
+text = "Exit Game"
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -468.5
+offset_top = 150.808
+offset_right = -350.5
+offset_bottom = 166.808
+grow_horizontal = 2
+scale = Vector2(5, 5)
+text = "GAME NAME ♾️"

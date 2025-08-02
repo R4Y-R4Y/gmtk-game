@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ynqjh5cx2fb"]
+[gd_scene load_steps=4 format=3 uid="uid://8ynqjh5cx2fb"]
 
 [ext_resource type="Script" uid="uid://c1l1emajqqwd" path="res://scripts/UI/Credits.cs" id="1_uuxl4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uuxl4"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xdbn2"]
+emission_shape = 3
+emission_box_extents = Vector3(1000, 10, 0)
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, -5, 0)
+scale_min = 0.3
+scale_max = 1.5
+color = Color(1, 1, 1, 0.8)
 
 [node name="Credits" type="Node2D"]
 
@@ -10,6 +25,24 @@ anchors_preset = 0
 offset_right = 1731.0
 offset_bottom = 973.0
 script = ExtResource("1_uuxl4")
+
+[node name="ColorRect" type="ColorRect" parent="Credits"]
+offset_left = -473.113
+offset_top = -707.202
+offset_right = -433.113
+offset_bottom = -667.202
+scale = Vector2(69.0325, 88917.7)
+color = Color(0, 0, 0, 1)
+
+[node name="BackgroundParticles" type="GPUParticles2D" parent="Credits"]
+modulate = Color(1, 1, 1, 0.6)
+material = SubResource("CanvasItemMaterial_uuxl4")
+position = Vector2(715.833, 868.043)
+amount = 150
+lifetime = 15.0
+preprocess = 3.0
+visibility_rect = Rect2(-1200, -200, 2400, 1400)
+process_material = SubResource("ParticleProcessMaterial_xdbn2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
 layout_mode = 1
