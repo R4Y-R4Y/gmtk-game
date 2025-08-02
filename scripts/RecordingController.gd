@@ -21,7 +21,7 @@ var selected_clone_index : int = 0
 @onready var ani = $AnimatedSprite2D
 
 ##Period for recording player's actions in seconds
-@export_range(1, 10) var recordingDuration: float = 3.0
+@export_range(1, 10) var recordingDuration: float = Constants.RECORDING_DURATION
 @export var cloneArray: Array[Clone]
 
 func _ready():
