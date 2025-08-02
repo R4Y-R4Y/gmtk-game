@@ -1,10 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://bfbj5jxc1poj4"]
+[gd_scene load_steps=22 format=3 uid="uid://bfbj5jxc1poj4"]
 
 [ext_resource type="Script" uid="uid://2icmwecnyrjn" path="res://scripts/RecordingController.gd" id="1_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://bkanwoyqkgii0" path="res://assets/player/Player Placeholder Small.png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://dlwibu2wjr2gp" path="res://assets/player/Player Placeholder.png" id="3_fjrip"]
+[ext_resource type="Texture2D" uid="uid://cx8e35i5ijyfl" path="res://assets/player/playersheet_jump.png" id="4_kqtwu"]
 [ext_resource type="Texture2D" uid="uid://wutfg3ihbpb2" path="res://assets/player/playersheet.png" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://bo8mpyia0rcwp" path="res://scripts/player/sliderLabel.gd" id="5_ur7pv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eyoc"]
+atlas = ExtResource("4_kqtwu")
+region = Rect2(64, 0, 64, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("4_tuyoq")
@@ -17,6 +22,10 @@ region = Rect2(64, 0, 64, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("4_tuyoq")
 region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eojnx"]
+atlas = ExtResource("4_kqtwu")
+region = Rect2(0, 0, 64, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("4_tuyoq")
@@ -78,7 +87,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_fjrip")
+"texture": SubResource("AtlasTexture_6eyoc")
 }],
 "loop": true,
 "name": &"falling",
@@ -100,7 +109,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_fjrip")
+"texture": SubResource("AtlasTexture_eojnx")
 }],
 "loop": false,
 "name": &"jump",
@@ -219,9 +228,8 @@ roll = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y4r1p")
-animation = &"walk"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.416564
 offset = Vector2(0.675, -2.39)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
