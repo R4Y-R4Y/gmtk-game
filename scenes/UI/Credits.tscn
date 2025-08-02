@@ -27,6 +27,7 @@ offset_bottom = 973.0
 script = ExtResource("1_uuxl4")
 
 [node name="ColorRect" type="ColorRect" parent="Credits"]
+layout_mode = 0
 offset_left = -473.113
 offset_top = -707.202
 offset_right = -433.113

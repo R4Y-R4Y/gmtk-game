@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj3q377ena010"]
+[gd_scene load_steps=5 format=3 uid="uid://dj3q377ena010"]
 
 [ext_resource type="PackedScene" uid="uid://bklgb3sgw7jtl" path="res://scenes/levels/level1.tscn" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://waa8akjlrhci" path="res://scenes/characters/clone.tscn" id="2_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://bpmpt431iloig" path="res://scenes/UI/ingameui.tscn" id="4_ingameui"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,3 +19,5 @@ position = Vector2(-1193, 350)
 position = Vector2(-2386, 700)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_0bbpv")]
+
+[node name="InGameUI" parent="." instance=ExtResource("4_ingameui")]
