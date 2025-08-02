@@ -2,9 +2,6 @@ extends PlatformerController2D
 
 class_name RecordingController
 
-# Signal to notify clones when recording is complete
-signal recording_finished(recording_data: Dictionary)
-
 var count = 0
 var is_recording = false
 var recording_timer = 0.0
