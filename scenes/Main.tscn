@@ -1,16 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://dj3q377ena010"]
 
-[ext_resource type="PackedScene" uid="uid://tnip4sscpp4b" path="res://scenes/level.tscn" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://bklgb3sgw7jtl" path="res://scenes/levels/level1.tscn" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://waa8akjlrhci" path="res://scenes/characters/clone.tscn" id="2_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="2_r0du0"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Map" parent="." instance=ExtResource("1_uu6xs")]
-
-[node name="Player" parent="." instance=ExtResource("2_r0du0")]
-position = Vector2(-1, -22)
+[node name="Player" parent="." node_paths=PackedStringArray("cloneArray") instance=ExtResource("2_r0du0")]
+position = Vector2(-427, 56)
+cloneArray = [NodePath("../Clone"), NodePath("../Clone2")]
 wallJump = false
 
 [node name="Clone" parent="." instance=ExtResource("2_0bbpv")]
-position = Vector2(62, -22)
+position = Vector2(-1193, 350)
+
+[node name="Clone2" parent="." instance=ExtResource("2_0bbpv")]
+position = Vector2(-2386, 700)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_0bbpv")]
