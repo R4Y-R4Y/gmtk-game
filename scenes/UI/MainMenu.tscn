@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8aijawu1kg0j"]
+
+[ext_resource type="Script" uid="uid://dt3b5snmtayn7" path="res://scripts/UI/MainMenu.cs" id="1_11hie"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 143.0
+offset_top = 288.0
+offset_right = 1875.0
+offset_bottom = 1261.0
+scale = Vector2(0.769372, 0.714082)
+script = ExtResource("1_11hie")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 18.0
+offset_right = 965.0
+offset_bottom = 537.0
+scale = Vector2(1.77131, 2.76)
+alignment = 1
+
+[node name="New Game" type="Button" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(-0.05, 0)
+layout_mode = 2
+size_flags_vertical = 8
+text = "New Game"
+
+[node name="Load Game" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Load game"
+
+[node name="Settings" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Credits" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
