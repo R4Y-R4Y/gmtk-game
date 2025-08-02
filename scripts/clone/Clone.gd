@@ -47,10 +47,10 @@ func check_player_crushing():
 	var distance = global_position.distance_to(player_reference.global_position)
 	var vector_player_clone = global_position - player_reference.global_position
 
-	var horizontal_crush = distance < 15 and abs(dot_product_horizontal) < .22 and abs(vector_player_clone.y) < 0.01
+	var horizontal_crush = distance < 15 and abs(dot_product_horizontal) < .22 and abs(vector_player_clone.y) < 20
 	var vertical_crush = distance < 50 and abs(dot_product_vertical) < .22 and vector_player_clone.y < 0
 	
-	if horizontal_crush or vertical_crush or distance < 0.00001:
+	if horizontal_crush or vertical_crush or distance < 0.001:
 
 		var space_state = get_world_2d().direct_space_state
 		var query = PhysicsShapeQueryParameters2D.new()
