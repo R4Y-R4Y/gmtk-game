@@ -10,7 +10,6 @@ public partial class MainMenu : Control
         GetNode<Button>("/root/MainMenu/MainMenu/VBoxContainer/Settings").Pressed += OnSettingsPressed;
         GetNode<Button>("/root/MainMenu/MainMenu/VBoxContainer/Credits").Pressed += OnCreditsPressed;
         GetNode<Button>("/root/MainMenu/MainMenu/VBoxContainer/Exit").Pressed += OnExitPressed;
-        GetNode<Button>("/root/Settings/Settings/VBoxContainer/Back").Pressed += OnBackPressed;
     }
 
     private void OnStartPressed()
@@ -28,24 +27,18 @@ public partial class MainMenu : Control
     private void OnSettingsPressed()
     {
         GD.Print("Settings ⚙️");
-        GetTree().ChangeSceneToFile("res://scenes/Settings.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/UI/Settings.tscn");
     }
 
     private void OnCreditsPressed()
     {
         GD.Print("Credits");
-        GetTree().ChangeSceneToFile("res://scenes/Credits.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/UI/Credits.tscn");
     }
 
     private void OnExitPressed()
     {
         GD.Print("Exiting Game 🚀");
         GetTree().Quit();
-    }
-
-    private void OnBackPressed()
-    {
-        GD.Print("Back to Main Menu");
-        GetTree().ChangeSceneToFile("res://scenes/MainMenu.tscn");
     }
 }

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://deb8m3mh7tbde"]
+[gd_scene load_steps=2 format=3 uid="uid://nmpia0rm8vo8"]
 
-[ext_resource type="Script" uid="uid://w7bno4o105nh" path="res://scenes/Settings.cs" id="1_rbmmp"]
+[ext_resource type="Script" uid="uid://b1y4mnogko1en" path="res://scripts/UI/Settings.cs" id="1_g0tyt"]
 
 [node name="Settings" type="Node2D"]
 
@@ -9,7 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1731.0
 offset_bottom = 973.0
-script = ExtResource("1_rbmmp")
+script = ExtResource("1_g0tyt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
 layout_mode = 1

@@ -12,6 +12,6 @@ public partial class Settings : Control
     private void OnBackPressed()
     {
         GD.Print("Back to Main Menu");
-        GetTree().ChangeSceneToFile("res://scenes/MainMenu.tscn");
+        GetTree().ChangeSceneToFile("res://scenes/UI/MainMenu.tscn");
     }
 }

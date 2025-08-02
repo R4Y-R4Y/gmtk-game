@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bej4vhgskkxem"]
+[gd_scene load_steps=2 format=3 uid="uid://b8aijawu1kg0j"]
 
-[ext_resource type="Script" uid="uid://dbcm455laxq23" path="res://scenes/MainMenu.cs" id="1_yqorp"]
+[ext_resource type="Script" uid="uid://dt3b5snmtayn7" path="res://scripts/UI/MainMenu.cs" id="1_11hie"]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -12,7 +12,7 @@ offset_top = 288.0
 offset_right = 1875.0
 offset_bottom = 1261.0
 scale = Vector2(0.769372, 0.714082)
-script = ExtResource("1_yqorp")
+script = ExtResource("1_11hie")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 0
@@ -41,6 +41,6 @@ text = "Settings"
 layout_mode = 2
 text = "Credits"
 
-[node name="Exist" type="Button" parent="MainMenu/VBoxContainer"]
+[node name="Exit" type="Button" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
