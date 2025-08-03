@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://bklgb3sgw7jtl"]
 
 [ext_resource type="TileSet" uid="uid://c23rku3em3b6e" path="res://assets/tileset/tilemap_tileset.tres" id="1_4tcl0"]
-[ext_resource type="PackedScene" uid="uid://cmbm7n2hpo0os" path="res://scenes/props/door.tscn" id="2_4tcl0"]
+[ext_resource type="PackedScene" uid="uid://borci1fgkyi0g" path="res://scenes/props/door.tscn" id="2_4tcl0"]
 
 [node name="TileMapLayer" type="TileMapLayer"]
 use_parent_material = true

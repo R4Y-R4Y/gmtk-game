@@ -7,7 +7,6 @@ var depletion_rate = 100.0 / Constants.RECORDING_DURATION
 
 func _ready():
 	textured_progress_bar.value = timer
-	print(depletion_rate) 
 
 func _process(delta):	
 	if Input.is_action_pressed("record") && !is_depleting:  
