@@ -9,6 +9,7 @@ var playback_timer = 0.0
 var play_reverse = false
 @onready var ani = $AnimatedSprite2D
 @onready var collision = $CollisionShape2D
+@onready var AudioStreamPlayer2d : AudioStreamPlayer2D = $AudioStreamPlayer2D 
 
 # Player crushing detection
 var player_reference = null
@@ -33,6 +34,8 @@ func start_playback():
 	count = 0
 	playback_timer = 0.0
 	play_reverse = false
+	AudioStreamPlayer2d.stream = load("res://assets/Music/sound/GMTK Science 2025Clone Appear_v2.wav")
+	AudioStreamPlayer2d.play()
 	print("Clone starting playback...")
 
 func _physics_process(_delta):

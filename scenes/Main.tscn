@@ -10,7 +10,6 @@
 [node name="Player" parent="." node_paths=PackedStringArray("cloneArray") instance=ExtResource("2_r0du0")]
 position = Vector2(-485, 72)
 cloneArray = [NodePath("../Clone"), NodePath("../Clone2")]
-wallJump = false
 
 [node name="Clone" parent="." instance=ExtResource("2_0bbpv")]
 position = Vector2(-1193, 350)

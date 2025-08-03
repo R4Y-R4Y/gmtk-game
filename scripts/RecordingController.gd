@@ -14,7 +14,7 @@ var UP : Vector2 = Vector2(0,-1)
 
 var currentClone : Clone
 var selected_clone_index : int = 0
-
+@onready var audioStreamPlayer2d : AudioStreamPlayer2D = $AudioStreamPlayer2D 
 @onready var ani = $AnimatedSprite2D
 
 ##Period for recording player's actions in seconds
@@ -62,6 +62,8 @@ func start_recording():
 	count = 0
 	save_data.clear()
 	is_recording = true
+	audioStreamPlayer2d.stream = load("res://assets/Music/sound/GMTK Science 2025Record On_v2.wav")
+	audioStreamPlayer2d.play()
 	print("Recording started...")
 
 func stop_recording():

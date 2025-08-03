@@ -12,6 +12,7 @@ class_name PlatformerController2D
 @export_category("Necesary Child Nodes")
 @export var PlayerSprite: AnimatedSprite2D
 @export var PlayerCollider: CollisionShape2D
+@onready var AudioStreamPlayer2d : AudioStreamPlayer2D = $AudioStreamPlayer2D 
 
 #INFO HORIZONTAL MOVEMENT 
 @export_category("L/R Movement")
@@ -272,6 +273,7 @@ func _process(_delta):
 			anim.play("run")
 		elif abs(velocity.x) < 0.1 and is_on_floor():
 			anim.speed_scale = 1
+			AudioStreamPlayer2d.stop()
 			anim.play("idle")
 	elif run and idle and walk and !dashing and !crouching:
 		if abs(velocity.x) > 0.1 and is_on_floor() and !is_on_wall():
@@ -282,11 +284,14 @@ func _process(_delta):
 				anim.play("run")
 		elif abs(velocity.x) < 0.1 and is_on_floor():
 			anim.speed_scale = 1
+			AudioStreamPlayer2d.stop()
 			anim.play("idle")
 		
 	#jump
 	if velocity.y < 0 and jump and !dashing:
 		anim.speed_scale = 1
+		AudioStreamPlayer2d.stream = load("res://assets/Music/sound/GMTK Science 2025JMP_Jump_v2.wav")
+		AudioStreamPlayer2d.play()
 		anim.play("jump")
 		
 	if velocity.y > 40 and falling and !dashing and !crouching:
