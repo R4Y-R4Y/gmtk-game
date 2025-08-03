@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8vbxj2k1m9pq"]
+[gd_scene load_steps=14 format=3 uid="uid://c8vbxj2k1m9pq"]
 
 [ext_resource type="Script" uid="uid://bjx4hnk5l6m2p" path="res://scripts/UI/LevelSelection.cs" id="1_level_selection"]
+[ext_resource type="Texture2D" uid="uid://level1_screenshot" path="res://assets/imgs/level select/1.png" id="2_level1"]
+[ext_resource type="Texture2D" uid="uid://level2_screenshot" path="res://assets/imgs/level select/2.png" id="3_level2"]
+[ext_resource type="Texture2D" uid="uid://level3_screenshot" path="res://assets/imgs/level select/3.png" id="4_level3"]
+[ext_resource type="Texture2D" uid="uid://level4_screenshot" path="res://assets/imgs/level select/4.png" id="5_level4"]
+[ext_resource type="Texture2D" uid="uid://level5_screenshot" path="res://assets/imgs/level select/5.png" id="6_level5"]
+[ext_resource type="Texture2D" uid="uid://level6_screenshot" path="res://assets/imgs/level select/6.png" id="7_level6"]
+[ext_resource type="Texture2D" uid="uid://level7_screenshot" path="res://assets/imgs/level select/7.png" id="8_level7"]
+[ext_resource type="Texture2D" uid="uid://level8_screenshot" path="res://assets/imgs/level select/8.png" id="9_level8"]
+[ext_resource type="Texture2D" uid="uid://level9_screenshot" path="res://assets/imgs/level select/9.png" id="10_level9"]
+[ext_resource type="Texture2D" uid="uid://level10_screenshot" path="res://assets/imgs/level select/10.png" id="11_level10"]
+[ext_resource type="Texture2D" uid="uid://level11_screenshot" path="res://assets/imgs/level select/11.png" id="12_level11"]
+[ext_resource type="Texture2D" uid="uid://level12_screenshot" path="res://assets/imgs/level select/12.png" id="13_level12"]
 
 [node name="LevelSelection" type="Control"]
 layout_mode = 3
@@ -41,96 +53,228 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -360.0
-offset_top = -200.0
-offset_right = 360.0
-offset_bottom = 200.0
+offset_left = -480.0
+offset_top = -240.0
+offset_right = 480.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 4
 
-[node name="Level1" type="Button" parent="LevelGrid"]
+[node name="Level1Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level1Screenshot" type="TextureRect" parent="LevelGrid/Level1Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_level1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level1" type="Button" parent="LevelGrid/Level1Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 1"
 
-[node name="Level2" type="Button" parent="LevelGrid"]
+[node name="Level2Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level2Screenshot" type="TextureRect" parent="LevelGrid/Level2Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3_level2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level2" type="Button" parent="LevelGrid/Level2Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 2"
 
-[node name="Level3" type="Button" parent="LevelGrid"]
+[node name="Level3Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level3Screenshot" type="TextureRect" parent="LevelGrid/Level3Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_level3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level3" type="Button" parent="LevelGrid/Level3Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 3"
 
-[node name="Level4" type="Button" parent="LevelGrid"]
+[node name="Level4Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level4Screenshot" type="TextureRect" parent="LevelGrid/Level4Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_level4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level4" type="Button" parent="LevelGrid/Level4Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 4"
 
-[node name="Level5" type="Button" parent="LevelGrid"]
+[node name="Level5Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level5Screenshot" type="TextureRect" parent="LevelGrid/Level5Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("6_level5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level5" type="Button" parent="LevelGrid/Level5Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 5"
 
-[node name="Level6" type="Button" parent="LevelGrid"]
+[node name="Level6Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level6Screenshot" type="TextureRect" parent="LevelGrid/Level6Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("7_level6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level6" type="Button" parent="LevelGrid/Level6Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 6"
 
-[node name="Level7" type="Button" parent="LevelGrid"]
+[node name="Level7Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level7Screenshot" type="TextureRect" parent="LevelGrid/Level7Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("8_level7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level7" type="Button" parent="LevelGrid/Level7Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 7"
 
-[node name="Level8" type="Button" parent="LevelGrid"]
+[node name="Level8Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level8Screenshot" type="TextureRect" parent="LevelGrid/Level8Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("9_level8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level8" type="Button" parent="LevelGrid/Level8Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 8"
 
-[node name="Level9" type="Button" parent="LevelGrid"]
+[node name="Level9Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level9Screenshot" type="TextureRect" parent="LevelGrid/Level9Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("10_level9")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level9" type="Button" parent="LevelGrid/Level9Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 9"
 
-[node name="Level10" type="Button" parent="LevelGrid"]
+[node name="Level10Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level10Screenshot" type="TextureRect" parent="LevelGrid/Level10Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("11_level10")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level10" type="Button" parent="LevelGrid/Level10Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 10"
 
-[node name="Level11" type="Button" parent="LevelGrid"]
+[node name="Level11Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level11Screenshot" type="TextureRect" parent="LevelGrid/Level11Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("12_level11")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level11" type="Button" parent="LevelGrid/Level11Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 11"
 
-[node name="Level12" type="Button" parent="LevelGrid"]
+[node name="Level12Container" type="VBoxContainer" parent="LevelGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 32
+
+[node name="Level12Screenshot" type="TextureRect" parent="LevelGrid/Level12Container"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("13_level12")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Level12" type="Button" parent="LevelGrid/Level12Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Level 12"
 
 [node name="BackButton" type="Button" parent="."]
