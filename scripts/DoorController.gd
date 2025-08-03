@@ -50,3 +50,7 @@ func instantiate_ui_win():
 	else:
 		print("UiWin scene not found at: ", ui_win_scene_path)
 		print("Please create the UiWin scene in the UI folder")
+
+
+func _on_pushable_button_button_pressed() -> void:
+	pass # Replace with function body.
