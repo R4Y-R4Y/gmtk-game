@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://kc3rylnsqola" path="res://assets/UI/abilitybar/front.png" id="5_w7g8i"]
 [ext_resource type="Texture2D" uid="uid://cuyf2bts01ivp" path="res://assets/UI/abilitybar/thing2.png" id="6_afid0"]
 [ext_resource type="Texture2D" uid="uid://x53510xe44gu" path="res://assets/UI/abilitybar/clonehead.png" id="7_afid0"]
-[ext_resource type="Script" path="res://scripts/UI/clones_count.gd" id="9_rued8"]
+[ext_resource type="Script" uid="uid://e3ap5n42gml4" path="res://scripts/UI/clones_count.gd" id="9_rued8"]
 
 [node name="InGameUI" type="CanvasLayer"]
 script = ExtResource("1_pause")
