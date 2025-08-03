@@ -31,4 +31,5 @@ door_enabled = true
 level_number = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-86, -97)
 zoom = Vector2(1.44, 1.44)
