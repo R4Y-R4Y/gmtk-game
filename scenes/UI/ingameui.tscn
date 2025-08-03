@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgqp3ejy1pbrx"]
+[gd_scene load_steps=8 format=3 uid="uid://bgqp3ejy1pbrx"]
 
 [ext_resource type="Script" uid="uid://ci7xuygof50s2" path="res://scripts/UI/Pause.cs" id="1_pause"]
 [ext_resource type="Texture2D" uid="uid://dlwibu2wjr2gp" path="res://assets/imgs/player/Player Placeholder.png" id="2_texture"]
-[ext_resource type="Script" uid="uid://ctol1huoaiax4" path="res://scripts/UI/ability_bar.gd" id="3_1ukxy"]
+[ext_resource type="Script" path="res://scripts/UI/ability_bar.gd" id="3_1ukxy"]
 [ext_resource type="Texture2D" uid="uid://dntmvnfjw3wwf" path="res://assets/UI/abilitybar/back.png" id="4_gfsug"]
 [ext_resource type="Texture2D" uid="uid://kc3rylnsqola" path="res://assets/UI/abilitybar/front.png" id="5_w7g8i"]
 [ext_resource type="Texture2D" uid="uid://b0fmjk6nte3ck" path="res://assets/UI/abilitybar/thing.png" id="6_w7g8i"]
