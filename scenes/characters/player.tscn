@@ -12,7 +12,7 @@ script = ExtResource("1_qlg0r")
 PlayerSprite = NodePath("AnimatedSprite2D")
 PlayerCollider = NodePath("CollisionShape2D")
 directionalSnap = true
-wallJump = true
+coyoteTime = 0.206
 run = true
 jump = true
 idle = true
@@ -50,6 +50,7 @@ target_position = Vector2(0, -25)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -27)
+enabled = false
 zoom = Vector2(2, 2)
 
 [node name="VScrollBar" type="VScrollBar" parent="Camera2D"]
