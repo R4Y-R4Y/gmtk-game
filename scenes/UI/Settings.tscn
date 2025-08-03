@@ -75,6 +75,12 @@ theme_override_font_sizes/font_size = 32
 text = "R - Record Player Movement"
 horizontal_alignment = 1
 
+[node name="SwitchLabel" type="Label" parent="SettingsContainer/ControlsSection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "E - Switch Clones"
+horizontal_alignment = 1
+
 [node name="ControlsSpacing2" type="Control" parent="SettingsContainer/ControlsSection"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
