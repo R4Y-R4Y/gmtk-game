@@ -10,7 +10,7 @@ public partial class MainMenu : Control
 		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Play();
 
 		GetNode<Button>("/root/MainMenu/MainMenu/StartNewGame").Pressed += OnStartPressed;
-		GetNode<Button>("/root/MainMenu/MainMenu/LoadGame").Pressed += OnLoadPressed;
+		GetNode<Button>("/root/MainMenu/MainMenu/LevelSelection").Pressed += OnLevelSelectionPressed;
 		GetNode<Button>("/root/MainMenu/MainMenu/Settings").Pressed += OnSettingsPressed;
 		GetNode<Button>("/root/MainMenu/MainMenu/Credits").Pressed += OnCreditsPressed;
 		GetNode<Button>("/root/MainMenu/MainMenu/Exit").Pressed += OnExitPressed;
@@ -51,11 +51,11 @@ public partial class MainMenu : Control
 		GetTree().ChangeSceneToFile("res://scenes/levels/level1.tscn");
 	}
 
-	private void OnLoadPressed()
+	private void OnLevelSelectionPressed()
 	{
-		GD.Print("Start Game");
+		GD.Print("Level Selection");
 		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
-		GetTree().ChangeSceneToFile("res://scenes/levels/level1.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/UI/LevelSelection.tscn");
 	}
 
 	private void OnSettingsPressed()
