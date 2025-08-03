@@ -30,8 +30,10 @@ tile_set = ExtResource("4_flxei")
 [node name="Door" parent="." instance=ExtResource("5_esddj")]
 position = Vector2(316, -48)
 door_enabled = true
+level_number = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-13, 0)
 zoom = Vector2(1.44, 1.44)
 
 [node name="PushableButton" parent="." instance=ExtResource("6_5d6be")]

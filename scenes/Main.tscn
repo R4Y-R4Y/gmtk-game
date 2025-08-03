@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://exv4oop2ps22"]
 
-[ext_resource type="PackedScene" uid="uid://bklgb3sgw7jtl" path="res://scenes/levels/level1.tscn" id="1_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://bklgb3sgw7jtl" path="res://scenes/levels/level3.tscn" id="1_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://waa8akjlrhci" path="res://scenes/characters/clone.tscn" id="2_0bbpv"]
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="2_r0du0"]
 [ext_resource type="PackedScene" uid="uid://bpmpt431iloig" path="res://scenes/UI/ingameui.tscn" id="4_ingameui"]
