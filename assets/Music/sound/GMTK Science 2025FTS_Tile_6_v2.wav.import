@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://f4bshfspd5wo"
+path="res://.godot/imported/GMTK Science 2025FTS_Tile_6_v2.wav-e31d54613c383e5159ddda0c4950b2ef.sample"
+
+[deps]
+
+source_file="res://assets/Music/sound/GMTK Science 2025FTS_Tile_6_v2.wav"
+dest_files=["res://.godot/imported/GMTK Science 2025FTS_Tile_6_v2.wav-e31d54613c383e5159ddda0c4950b2ef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
