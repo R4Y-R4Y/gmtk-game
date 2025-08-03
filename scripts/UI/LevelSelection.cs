@@ -7,7 +7,7 @@ public partial class LevelSelection : Control
 	{
 		for (int i = 1; i <= 12; i++)
 		{
-			var levelButton = GetNode<Button>($"LevelGrid/Level{i}");
+			var levelButton = GetNode<Button>($"LevelGrid/Level{i}Container/Level{i}");
 			int levelNumber = i; 
 			levelButton.Pressed += () => OnLevelPressed(levelNumber);
 		}
