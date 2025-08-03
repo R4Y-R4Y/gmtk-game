@@ -28,4 +28,5 @@ level_number = 3
 [node name="InGameUI" parent="." instance=ExtResource("5_2r1tl")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-86, -97)
 zoom = Vector2(1.44, 1.44)
