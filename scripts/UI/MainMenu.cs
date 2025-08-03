@@ -6,12 +6,15 @@ public partial class MainMenu : Control
 	public override void _Ready()
 	{
 		CreateParticleTexture();
-		
+
+		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Play();
+
 		GetNode<Button>("/root/MainMenu/MainMenu/StartNewGame").Pressed += OnStartPressed;
 		GetNode<Button>("/root/MainMenu/MainMenu/LoadGame").Pressed += OnLoadPressed;
 		GetNode<Button>("/root/MainMenu/MainMenu/Settings").Pressed += OnSettingsPressed;
 		GetNode<Button>("/root/MainMenu/MainMenu/Credits").Pressed += OnCreditsPressed;
 		GetNode<Button>("/root/MainMenu/MainMenu/Exit").Pressed += OnExitPressed;
+		
 	}
 
 	private void CreateParticleTexture()
@@ -44,30 +47,35 @@ public partial class MainMenu : Control
 	private void OnStartPressed()
 	{
 		GD.Print("Start Game");
+		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
 		GetTree().ChangeSceneToFile("res://scenes/levels/level1.tscn");
 	}
 
 	private void OnLoadPressed()
 	{
 		GD.Print("Start Game");
+		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
 		GetTree().ChangeSceneToFile("res://scenes/levels/level1.tscn");
 	}
 
 	private void OnSettingsPressed()
 	{
 		GD.Print("Settings ⚙️");
+		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
 		GetTree().ChangeSceneToFile("res://scenes/UI/Settings.tscn");
 	}
 
 	private void OnCreditsPressed()
 	{
 		GD.Print("Credits");
+		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
 		GetTree().ChangeSceneToFile("res://scenes/UI/Credits.tscn");
 	}
 
 	private void OnExitPressed()
 	{
 		GD.Print("Exiting Game 🚀");
+		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
 		GetTree().Quit();
 	}
 }

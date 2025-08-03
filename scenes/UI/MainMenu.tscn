@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8aijawu1kg0j"]
+[gd_scene load_steps=6 format=3 uid="uid://b8aijawu1kg0j"]
 
 [ext_resource type="Script" uid="uid://dt3b5snmtayn7" path="res://scripts/UI/MainMenu.cs" id="1_11hie"]
+[ext_resource type="Texture2D" uid="uid://k1vu4jc0k04l" path="res://assets/cloop.png" id="2_58fj5"]
+[ext_resource type="AudioStream" uid="uid://dicyd2ob1sa2e" path="res://assets/Music/Theme/gmtkmenu25_v2.wav" id="3_3h7gc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1"]
 blend_mode = 1
@@ -130,3 +132,12 @@ offset_bottom = 138.98
 grow_horizontal = 2
 scale = Vector2(10, 10)
 text = "CLOOP"
+
+[node name="Cloop" type="Sprite2D" parent="."]
+position = Vector2(443, 196)
+scale = Vector2(0.491667, 0.491667)
+texture = ExtResource("2_58fj5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3h7gc")
+autoplay = true
