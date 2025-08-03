@@ -4,8 +4,8 @@
 [ext_resource type="SpriteFrames" uid="uid://numjmqd21b8v" path="res://assets/spriteframes/doctor.tres" id="2_76oj4"]
 [ext_resource type="Script" uid="uid://bo8mpyia0rcwp" path="res://scripts/player/sliderLabel.gd" id="5_ur7pv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
-size = Vector2(20, 44)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76oj4"]
+height = 44.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("PlayerSprite", "PlayerCollider")]
 script = ExtResource("1_qlg0r")
@@ -31,7 +31,7 @@ autoplay = "idle"
 offset = Vector2(0.675, -2.39)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_d2wvv")
+shape = SubResource("CapsuleShape2D_76oj4")
 
 [node name="lCast" type="RayCast2D" parent="."]
 visible = false

@@ -43,8 +43,8 @@ public partial class MainMenu : Control
 
     private void OnStartPressed()
     {
-        GD.Print("Start Game");
-        GetTree().ChangeSceneToFile("res://scenes/Main.tscn");
+        GD.Print("Start Game - Loading Story");
+        GetTree().ChangeSceneToFile("res://scenes/UI/Story.tscn");
     }
 
     private void OnLoadPressed()

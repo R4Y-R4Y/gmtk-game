@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bplneun0q5cbk"]
+[gd_scene load_steps=4 format=3 uid="uid://bplneun0q5cbk"]
 
-[ext_resource type="PackedScene" uid="uid://bpmpt431iloig" path="res://scenes/UI/ingameui.tscn" id="1_ingameui"]
+[ext_resource type="PackedScene" uid="uid://bgqp3ejy1pbrx" path="res://scenes/UI/ingameui.tscn" id="1_ingameui"]
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://bklgb3sgw7jtl" path="res://scenes/levels/level1.tscn" id="3_utwm8"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_player")]
 
 [node name="InGameUI" parent="." instance=ExtResource("1_ingameui")]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("3_utwm8")]
