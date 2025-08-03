@@ -35,3 +35,6 @@ level_number = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.44, 1.44)
+
+[connection signal="button_pressed" from="PushableButton" to="Door" method="open_door"]
+[connection signal="button_released" from="PushableButton" to="Door" method="close_door"]

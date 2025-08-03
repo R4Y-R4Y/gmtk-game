@@ -38,7 +38,6 @@ zoom = Vector2(1.44, 1.44)
 [node name="PlatformTileMapLayer" parent="." instance=ExtResource("6_qsj6i")]
 position = Vector2(-62, 191)
 tile_map_data = PackedByteArray("AAAJAP//AAAAAAEAAAAJAAQAAAAAAAMAAAAJAAMAAAAAAAIAAAAJAAIAAAAAAAIAAAAJAAEAAAAAAAIAAAAJAAAAAAAAAAIAAAA=")
-platform_enabled = false
 
 [node name="PushableButton" parent="." instance=ExtResource("7_dju2a")]
 position = Vector2(-255, 272)
