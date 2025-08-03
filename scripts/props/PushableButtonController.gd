@@ -7,11 +7,11 @@ signal button_released
 @onready var button_area: Area2D = $Area2D
 @onready var animated_sprite: AnimationPlayer = $AnimationPlayer
 
-@export var signal_name: String
-
+var clone_in_zone
 var is_pressed: bool = false
 var bodies_on_button: Array = []
 var reset_timer: float = 0.0
+
 
 func _ready():
 	animated_sprite.play("release")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmbm7n2hpo0os"]
+[gd_scene load_steps=19 format=3 uid="uid://cmbm7n2hpo0os"]
 
 [ext_resource type="Script" uid="uid://b6j20ybvme25q" path="res://scripts/DoorController.gd" id="1_yepiq"]
 [ext_resource type="Texture2D" uid="uid://7u2wyl3p8pho" path="res://assets/imgs/props/door.png" id="2_yepiq"]
@@ -113,7 +113,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dmq6"]
-size = Vector2(72, 74)
+size = Vector2(32, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yepiq"]
+size = Vector2(76, 77)
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_yepiq")
@@ -121,13 +124,19 @@ script = ExtResource("1_yepiq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_s0syb")
-animation = &"open"
+animation = &"close"
 
 [node name="ExitArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
-position = Vector2(0, -5)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_8dmq6")
+
+[node name="AnimationArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationArea"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_yepiq")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="ExitArea" to="." method="_on_player_entered"]

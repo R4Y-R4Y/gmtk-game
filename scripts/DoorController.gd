@@ -1,20 +1,43 @@
 extends Node2D
 @onready var animatedSprite = $AnimatedSprite2D
 
-var player_inside = false
 
 @export var ui_win_scene_path: String = "res://scenes/UI/UiWin.tscn"
+@export var door_enabled : bool
 @export var level_number: int
+
+var player_inside = false
+
 func _ready():
-	animatedSprite.play("close_idle")
+	if door_enabled: 
+		animatedSprite.play("open")
+	else:
+		animatedSprite.play("close_idle")
+		
+func _enable_door():
+	open_door()
+	
+func _disable_door():
+	close_door()
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("down") && player_inside:
-		print("Player activated door - loading UiWin scene")
+func _on_player_entered(body):
+	if body.is_in_group("player") and door_enabled:
 		instantiate_ui_win()
+		print("Player entered door area - opening door")
 
+func _on_player_exited(body):
+	if body.is_in_group("player"):
+		player_inside = false
+
+func open_door():
+	door_enabled = true
+	animatedSprite.play("open")
+
+func close_door():
+	door_enabled = false
+	animatedSprite.play("close")
+	
 func instantiate_ui_win():
-
 	if ResourceLoader.exists(ui_win_scene_path):
 		var ui_win_scene = load(ui_win_scene_path)
 		var ui_win_instance = ui_win_scene.instantiate()
@@ -24,35 +47,3 @@ func instantiate_ui_win():
 	else:
 		print("UiWin scene not found at: ", ui_win_scene_path)
 		print("Please create the UiWin scene in the UI folder")
-		
-
-func _on_player_entered(body):
-	if body.is_in_group("player"):
-		print("Player entered door area - opening door")
-		open_door()
-
-func _on_player_exited(body):
-	if body.is_in_group("player"):
-		print("Player exited door area - closing door")
-		player_inside = false
-		close_door()
-
-func _on_animation_finished():
-	match animatedSprite.animation:
-		"open":
-			player_inside = true
-			print("Door opened - playing open_idle")
-		"close":
-			player_inside = false
-			print("Door closed - playing idle")
-		_:
-			pass
-
-func open_door():
-	animatedSprite.play("open")
-
-func close_door():
-	player_inside = false
-	animatedSprite.play("close")
-	
-	
