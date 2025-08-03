@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://c884ahtu0n53e"]
+[gd_scene load_steps=2 format=3 uid="uid://bw5bijom3iril"]
 
-[ext_resource type="Texture2D" uid="uid://dlwibu2wjr2gp" path="res://assets/imgs/player/Player Placeholder.png" id="1_b0pos"]
 [ext_resource type="Script" uid="uid://bnbjwc4btwyo3" path="res://scripts/UI/UiWin.cs" id="1_w6c87"]
 
 [node name="UiWin" type="CanvasLayer"]
@@ -12,35 +11,39 @@ offset_bottom = 969.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -750.5
-offset_top = -471.5
-offset_right = -702.5
-offset_bottom = -423.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(32.7691, 17.0757)
-texture = ExtResource("1_b0pos")
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 686.0
+offset_top = 262.0
+offset_right = 726.0
+offset_bottom = 302.0
+scale = Vector2(10.64, 9.84)
+color = Color(0.0705882, 0.972549, 0.964706, 0.784314)
+
+[node name="ColorRect2" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 677.0
+offset_top = 252.0
+offset_right = 717.0
+offset_bottom = 292.0
+scale = Vector2(10.64, 9.84)
+color = Color(0.847198, 0.830575, 1, 0.32549)
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -60.5
-offset_top = 324.0
-offset_right = 142.5
-offset_bottom = 355.0
+offset_left = -55.4999
+offset_top = 302.0
+offset_right = 147.5
+offset_bottom = 333.0
 grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "You win!"
-horizontal_alignment = 1
+text = "You Win"
 
 [node name="Next" type="Button" parent="Panel"]
 layout_mode = 1
@@ -50,9 +53,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.5
-offset_top = -87.5
+offset_top = -89.5
 offset_right = 35.5
-offset_bottom = -63.5
+offset_bottom = -65.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -65,13 +68,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.5
-offset_top = -12.5
-offset_right = 36.5
-offset_bottom = 11.5
+offset_left = -87.5
+offset_top = -19.5
+offset_right = 34.5
+offset_bottom = 4.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
+theme_override_colors/icon_normal_color = Color(1, 0.521416, 0.856768, 1)
 text = "Restart Level"
 
 [node name="Back" type="Button" parent="Panel"]

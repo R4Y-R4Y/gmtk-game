@@ -1,70 +1,126 @@
-[gd_scene load_steps=4 format=3 uid="uid://nmpia0rm8vo8"]
+[gd_scene load_steps=2 format=3 uid="uid://nmpia0rm8vo8"]
 
 [ext_resource type="Script" uid="uid://b1y4mnogko1en" path="res://scripts/UI/Settings.cs" id="1_g0tyt"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g0tyt"]
-blend_mode = 1
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ydmms"]
-emission_shape = 3
-emission_box_extents = Vector3(1000, 10, 0)
-direction = Vector3(0, -1, 0)
-spread = 30.0
-initial_velocity_min = 10.0
-initial_velocity_max = 30.0
-gravity = Vector3(0, -5, 0)
-scale_min = 0.3
-scale_max = 1.5
-color = Color(1, 1, 1, 0.8)
-
-[node name="Settings" type="Node2D"]
-
-[node name="Settings" type="Control" parent="."]
+[node name="Settings" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1731.0
-offset_bottom = 973.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_g0tyt")
 
-[node name="ColorRect" type="ColorRect" parent="Settings"]
-layout_mode = 0
-offset_left = -473.113
-offset_top = -707.202
-offset_right = -433.113
-offset_bottom = -667.202
-scale = Vector2(69.0325, 88917.7)
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="BackgroundParticles" type="GPUParticles2D" parent="Settings"]
-modulate = Color(1, 1, 1, 0.6)
-material = SubResource("CanvasItemMaterial_g0tyt")
-position = Vector2(715.833, 868.043)
-amount = 150
-lifetime = 15.0
-preprocess = 3.0
-visibility_rect = Rect2(-1200, -200, 2400, 1400)
-process_material = SubResource("ParticleProcessMaterial_ydmms")
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.5
+offset_top = 50.0
+offset_right = 115.5
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+[node name="SettingsContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -253.5
-offset_top = -199.5
-offset_right = 253.5
-offset_bottom = 199.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="Settings/VBoxContainer"]
+[node name="ControlsSection" type="VBoxContainer" parent="SettingsContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-text = "Settings"
+alignment = 1
 
-[node name="Back" type="Button" parent="Settings/VBoxContainer"]
+[node name="ControlsTitle" type="Label" parent="SettingsContainer/ControlsSection"]
 layout_mode = 2
-text = "Back to main menu"
+theme_override_font_sizes/font_size = 48
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="ControlsSpacing1" type="Control" parent="SettingsContainer/ControlsSection"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MovementLabel" type="Label" parent="SettingsContainer/ControlsSection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "WASD - Move & Jump"
+horizontal_alignment = 1
+
+[node name="RecordLabel" type="Label" parent="SettingsContainer/ControlsSection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "R - Record Player Movement"
+horizontal_alignment = 1
+
+[node name="ControlsSpacing2" type="Control" parent="SettingsContainer/ControlsSection"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="AudioSection" type="VBoxContainer" parent="SettingsContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="AudioTitle" type="Label" parent="SettingsContainer/AudioSection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Audio"
+horizontal_alignment = 1
+
+[node name="AudioSpacing1" type="Control" parent="SettingsContainer/AudioSection"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MusicContainer" type="HBoxContainer" parent="SettingsContainer/AudioSection"]
+layout_mode = 2
+alignment = 1
+
+[node name="MusicLabel" type="Label" parent="SettingsContainer/AudioSection/MusicContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Music Volume:"
+
+[node name="MusicSlider" type="HSlider" parent="SettingsContainer/AudioSection"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+value = 100.0
+
+[node name="MusicValueLabel" type="Label" parent="SettingsContainer/AudioSection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "100%"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -60.0
+offset_right = 220.0
+offset_bottom = -20.0
+grow_vertical = 0
+text = "Back to Main Menu"
