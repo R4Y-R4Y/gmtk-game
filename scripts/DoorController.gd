@@ -14,7 +14,6 @@ func _ready():
 	else:
 		animatedSprite.play("close_idle")
 
-
 func _enable_door():
 	open_door()
 	
@@ -50,3 +49,7 @@ func instantiate_ui_win():
 	else:
 		print("UiWin scene not found at: ", ui_win_scene_path)
 		print("Please create the UiWin scene in the UI folder")
+
+
+func _on_pushable_button_button_released() -> void:
+	pass # Replace with function body.
