@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://cagbgi600l7jq"]
+[gd_scene load_steps=8 format=4 uid="uid://cagbgi600l7jq"]
 
 [ext_resource type="PackedScene" uid="uid://bpmpt431iloig" path="res://scenes/UI/ingameui.tscn" id="1_ingameui"]
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="1_nos0u"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cy4ew2ff8ptwc" path="res://scenes/props/pushable_button.tscn" id="4_niitk"]
 [ext_resource type="TileSet" uid="uid://c23rku3em3b6e" path="res://assets/tileset/tilemap_tileset.tres" id="5_d5djh"]
 [ext_resource type="PackedScene" uid="uid://cmbm7n2hpo0os" path="res://scenes/props/door.tscn" id="6_ok6xr"]
+[ext_resource type="AudioStream" uid="uid://cws7ngkj3la2o" path="res://assets/Music/Theme/gmtklevel25_v2.wav" id="7_dj4wq"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,6 +36,10 @@ level_number = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.44, 1.44)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_dj4wq")
+autoplay = true
 
 [connection signal="button_pressed" from="PushableButton" to="Door" method="open_door"]
 [connection signal="button_released" from="PushableButton" to="Door" method="close_door"]

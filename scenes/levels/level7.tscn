@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ey7gjxssmnsw"]
+[gd_scene load_steps=9 format=4 uid="uid://ey7gjxssmnsw"]
 
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="1_adc7d"]
 [ext_resource type="PackedScene" uid="uid://waa8akjlrhci" path="res://scenes/characters/clone.tscn" id="2_mnr30"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cmbm7n2hpo0os" path="res://scenes/props/door.tscn" id="5_v2r1a"]
 [ext_resource type="PackedScene" uid="uid://cy4ew2ff8ptwc" path="res://scenes/props/pushable_button.tscn" id="6_1gkwy"]
 [ext_resource type="PackedScene" uid="uid://dyfpsefsm2jl3" path="res://scenes/props/platform_tile_layer.tscn" id="6_adc7d"]
+[ext_resource type="AudioStream" uid="uid://cws7ngkj3la2o" path="res://assets/Music/Theme/gmtklevel25_v2.wav" id="8_yu5ka"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -51,6 +52,10 @@ position = Vector2(-367, 272)
 
 [node name="PushableButton2" parent="." instance=ExtResource("6_1gkwy")]
 position = Vector2(-4, 272)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_yu5ka")
+autoplay = true
 
 [connection signal="button_pressed" from="PushableButton" to="PlatformTileMapLayer" method="disable"]
 [connection signal="button_pressed" from="PushableButton" to="PlatformTileMapLayer2" method="enable"]

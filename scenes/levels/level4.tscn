@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://olx11d7pccgb"]
+[gd_scene load_steps=8 format=4 uid="uid://olx11d7pccgb"]
 
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="1_rdsj4"]
 [ext_resource type="PackedScene" uid="uid://waa8akjlrhci" path="res://scenes/characters/clone.tscn" id="2_e127x"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://c23rku3em3b6e" path="res://assets/tileset/tilemap_tileset.tres" id="4_s45gt"]
 [ext_resource type="PackedScene" uid="uid://cmbm7n2hpo0os" path="res://scenes/props/door.tscn" id="5_4vryo"]
 [ext_resource type="PackedScene" uid="uid://cy4ew2ff8ptwc" path="res://scenes/props/pushable_button.tscn" id="5_e127x"]
+[ext_resource type="AudioStream" uid="uid://cws7ngkj3la2o" path="res://assets/Music/Theme/gmtklevel25_v2.wav" id="7_heu5o"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,6 +36,10 @@ position = Vector2(-263, 273)
 [node name="Door2" parent="." instance=ExtResource("5_4vryo")]
 position = Vector2(270, 241)
 level_number = 5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_heu5o")
+autoplay = true
 
 [connection signal="button_pressed" from="PushableButton" to="Door2" method="_enable_door"]
 [connection signal="button_released" from="PushableButton" to="Door2" method="_disable_door"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://c3ied4ntx2x84"]
+[gd_scene load_steps=7 format=4 uid="uid://c3ied4ntx2x84"]
 
 [ext_resource type="TileSet" uid="uid://c23rku3em3b6e" path="res://assets/tileset/tilemap_tileset.tres" id="1_4tcl0"]
 [ext_resource type="PackedScene" uid="uid://waa8akjlrhci" path="res://scenes/characters/clone.tscn" id="1_dywbp"]
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="2_1seuy"]
 [ext_resource type="PackedScene" uid="uid://cmbm7n2hpo0os" path="res://scenes/props/door.tscn" id="2_4tcl0"]
 [ext_resource type="PackedScene" uid="uid://bpmpt431iloig" path="res://scenes/UI/ingameui.tscn" id="5_2r1tl"]
+[ext_resource type="AudioStream" uid="uid://cws7ngkj3la2o" path="res://assets/Music/Theme/gmtklevel25_v2.wav" id="6_1seuy"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -33,3 +34,7 @@ level_number = 2
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-11, -3)
 zoom = Vector2(1.44, 1.44)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1seuy")
+autoplay = true

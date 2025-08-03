@@ -5,11 +5,14 @@ extends Node2D
 @export var ui_win_scene_path: String = "res://scenes/UI/UiWin.tscn"
 @export var door_enabled : bool
 @export var level_number: int
+@onready var AudioStreamPlayer2d : AudioStreamPlayer2D = $AudioStreamPlayer2D 
 
 var player_inside = false
 
 func _ready():
 	if door_enabled: 
+		AudioStreamPlayer2d.stream = load("res://assets/Music/sound/GMTK Science 2025Door Open_v2.wav")
+		AudioStreamPlayer2d.play()
 		animatedSprite.play("open")
 	else:
 		animatedSprite.play("close_idle")
@@ -33,10 +36,14 @@ func _on_player_exited(body):
 
 func open_door():
 	door_enabled = true
+	AudioStreamPlayer2d.stream = load("res://assets/Music/sound/GMTK Science 2025Door Open_v2.wav")
+	AudioStreamPlayer2d.play()
 	animatedSprite.play("open")
 
 func close_door():
 	door_enabled = false
+	AudioStreamPlayer2d.stream = load("res://assets/Music/sound/GMTK Science 2025Door Close_v2.wav")
+	AudioStreamPlayer2d.play()
 	animatedSprite.play("close")
 	
 func instantiate_ui_win():
@@ -49,7 +56,3 @@ func instantiate_ui_win():
 	else:
 		print("UiWin scene not found at: ", ui_win_scene_path)
 		print("Please create the UiWin scene in the UI folder")
-
-
-func _on_pushable_button_button_released() -> void:
-	pass # Replace with function body.

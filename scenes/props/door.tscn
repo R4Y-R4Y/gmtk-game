@@ -138,6 +138,8 @@ shape = SubResource("RectangleShape2D_8dmq6")
 position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_yepiq")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="ExitArea" to="." method="_on_player_entered"]
 [connection signal="body_exited" from="ExitArea" to="." method="_on_player_exited"]
