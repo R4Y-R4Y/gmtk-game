@@ -26,7 +26,7 @@ roll = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_76oj4")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0.675, -2.39)
 

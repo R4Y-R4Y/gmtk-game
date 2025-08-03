@@ -1,9 +1,9 @@
 [gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://numjmqd21b8v"]
 
-[ext_resource type="Texture2D" uid="uid://bkanwoyqkgii0" path="res://assets/player/Player Placeholder Small.png" id="1_5mlgg"]
-[ext_resource type="Texture2D" uid="uid://dlwibu2wjr2gp" path="res://assets/player/Player Placeholder.png" id="2_t2v0k"]
-[ext_resource type="Texture2D" uid="uid://wutfg3ihbpb2" path="res://assets/player/playersheet.png" id="3_gejyh"]
-[ext_resource type="Texture2D" uid="uid://cx8e35i5ijyfl" path="res://assets/player/playersheet_jump.png" id="3_t2v0k"]
+[ext_resource type="Texture2D" uid="uid://bkanwoyqkgii0" path="res://assets/imgs/player/Player Placeholder Small.png" id="1_5mlgg"]
+[ext_resource type="Texture2D" uid="uid://dlwibu2wjr2gp" path="res://assets/imgs/player/Player Placeholder.png" id="2_t2v0k"]
+[ext_resource type="Texture2D" uid="uid://wutfg3ihbpb2" path="res://assets/imgs/player/playersheet.png" id="3_gejyh"]
+[ext_resource type="Texture2D" uid="uid://cx8e35i5ijyfl" path="res://assets/imgs/player/playersheet_jump.png" id="3_t2v0k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6eyoc"]
 atlas = ExtResource("3_t2v0k")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://waa8akjlrhci"]
 
 [ext_resource type="Script" uid="uid://dkewo7aw0ecuq" path="res://scripts/clone/Clone.gd" id="1_kuiil"]
-[ext_resource type="SpriteFrames" uid="uid://numjmqd21b8v" path="res://assets/spriteframes/doctor.tres" id="2_0flef"]
+[ext_resource type="SpriteFrames" uid="uid://gklkb51mf2d4" path="res://assets/spriteframes/clone.tres" id="2_0flef"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
 size = Vector2(20, 44)
@@ -10,7 +10,6 @@ size = Vector2(20, 44)
 script = ExtResource("1_kuiil")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(4.52429e-06, 0.784986, 0.749618, 1)
 sprite_frames = ExtResource("2_0flef")
 animation = &"falling"
 autoplay = "idle"
