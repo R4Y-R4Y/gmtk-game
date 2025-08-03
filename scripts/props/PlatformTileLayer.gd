@@ -16,3 +16,11 @@ func enable():
 func disable():
 	set_cells_terrain_connect(cells, 0, 1)
 	return
+
+
+func _on_pushable_button_button_pressed() -> void:
+	pass # Replace with function body.
+
+
+func disabel() -> void:
+	pass # Replace with function body.

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=4 uid="uid://c4ks4c6k141eg"]
+[gd_scene load_steps=8 format=4 uid="uid://c4ks4c6k141eg"]
 
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="1_adc7d"]
 [ext_resource type="PackedScene" uid="uid://waa8akjlrhci" path="res://scenes/characters/clone.tscn" id="2_mnr30"]
 [ext_resource type="PackedScene" uid="uid://bpmpt431iloig" path="res://scenes/UI/ingameui.tscn" id="3_yu5ka"]
 [ext_resource type="TileSet" uid="uid://c23rku3em3b6e" path="res://assets/tileset/tilemap_tileset.tres" id="4_0g6gi"]
 [ext_resource type="PackedScene" uid="uid://cmbm7n2hpo0os" path="res://scenes/props/door.tscn" id="5_v2r1a"]
+[ext_resource type="PackedScene" uid="uid://cy4ew2ff8ptwc" path="res://scenes/props/pushable_button.tscn" id="6_1gkwy"]
+[ext_resource type="PackedScene" uid="uid://dyfpsefsm2jl3" path="res://scenes/props/platform_tile_layer.tscn" id="6_adc7d"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,6 +29,25 @@ tile_set = ExtResource("4_0g6gi")
 
 [node name="Door" parent="." instance=ExtResource("5_v2r1a")]
 position = Vector2(286, 240)
+door_enabled = true
+level_number = 11
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.44, 1.44)
+
+[node name="PlatformTileMapLayer" parent="." instance=ExtResource("6_adc7d")]
+position = Vector2(-169, 233)
+tile_map_data = PackedByteArray("AAAGAP//AAAAAAIAAAAGAAIAAAAAAAMAAAAGAAEAAAAAAAIAAAAGAAAAAAAAAAIAAAAGAP7/AAAAAAIAAAAGAP3/AAAAAAIAAAAGAPz/AAAAAAEAAAA=")
+
+[node name="PlatformTileMapLayer2" parent="." instance=ExtResource("6_adc7d")]
+position = Vector2(-169, 233)
+tile_map_data = PackedByteArray("AAAOAAIAAAAAAAMAAAAOAAEAAAAAAAIAAAAOAAAAAAAAAAIAAAAOAP//AAAAAAIAAAAOAP7/AAAAAAIAAAAOAP3/AAAAAAIAAAAOAPz/AAAAAAEAAAA=")
+platform_enabled = false
+
+[node name="PushableButton" parent="." instance=ExtResource("6_1gkwy")]
+position = Vector2(-262, 272)
+
+[connection signal="button_pressed" from="PushableButton" to="PlatformTileMapLayer" method="disable"]
+[connection signal="button_pressed" from="PushableButton" to="PlatformTileMapLayer2" method="enable"]
+[connection signal="button_released" from="PushableButton" to="PlatformTileMapLayer" method="enable"]
+[connection signal="button_released" from="PushableButton" to="PlatformTileMapLayer2" method="disable"]

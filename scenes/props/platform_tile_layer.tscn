@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://ihbe2mtkd28w"]
+[gd_scene load_steps=5 format=4 uid="uid://dyfpsefsm2jl3"]
 
 [ext_resource type="Texture2D" uid="uid://dvjwxkrlr2i8a" path="res://assets/imgs/props/energywall.png" id="1_0gjyl"]
 [ext_resource type="Script" uid="uid://clrk8yh32u40j" path="res://scripts/props/PlatformTileLayer.gd" id="2_j1qwx"]

@@ -22,7 +22,8 @@ tile_set = ExtResource("1_4tcl0")
 
 [node name="Door" parent="." instance=ExtResource("2_4tcl0")]
 position = Vector2(217, 65)
-level_number = 2
+door_enabled = true
+level_number = 3
 
 [node name="InGameUI" parent="." instance=ExtResource("5_2r1tl")]
 

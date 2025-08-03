@@ -27,6 +27,7 @@ tile_set = ExtResource("4_dju2a")
 
 [node name="Door" parent="." instance=ExtResource("5_v0vb7")]
 position = Vector2(331, -207)
+door_enabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.44, 1.44)
