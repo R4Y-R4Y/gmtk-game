@@ -33,6 +33,7 @@ door_enabled = true
 level_number = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-14, -2)
 zoom = Vector2(1.44, 1.44)
 
 [node name="PlatformTileMapLayer" parent="." instance=ExtResource("6_316ec")]
