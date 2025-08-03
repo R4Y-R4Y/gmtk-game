@@ -1,6 +1,7 @@
 extends Node
 
 signal button_pressed
+signal button_released
 
 
 @onready var button_area: Area2D = $Area2D
@@ -23,6 +24,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	print("Button released!")
 	animated_sprite.play("release")
+	button_released.emit()
 	is_pressed = false
 
 func press_button():
