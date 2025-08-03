@@ -113,6 +113,24 @@ scale = Vector2(0.7, 0.7)
 transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
 script = ExtResource("3_1ukxy")
 
+[node name="Instructions" type="Label" parent="AbilityBar"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 77.1429
+offset_top = -223.143
+offset_right = 534.143
+offset_bottom = -90.1429
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "R - Record Action
+E - Record using other clone
+Down Arrow / S - Enter Door
+"
+
 [node name="TextureProgressBar" type="TextureProgressBar" parent="AbilityBar"]
 offset_left = 237.357
 offset_top = 177.714
