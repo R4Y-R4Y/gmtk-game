@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://kc3rylnsqola" path="res://assets/UI/abilitybar/front.png" id="5_w7g8i"]
 [ext_resource type="Texture2D" uid="uid://cuyf2bts01ivp" path="res://assets/UI/abilitybar/thing2.png" id="6_afid0"]
 [ext_resource type="Texture2D" uid="uid://x53510xe44gu" path="res://assets/UI/abilitybar/clonehead.png" id="7_afid0"]
-[ext_resource type="Script" uid="uid://e3ap5n42gml4" path="res://scripts/UI/clones_count.gd" id="9_rued8"]
+[ext_resource type="Script" path="res://scripts/UI/clones_count.gd" id="9_rued8"]
 
 [node name="InGameUI" type="CanvasLayer"]
 script = ExtResource("1_pause")
@@ -18,6 +18,7 @@ offset_right = 1729.0
 offset_bottom = 969.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/Panel"]
 layout_mode = 0
@@ -27,6 +28,7 @@ offset_right = 726.0
 offset_bottom = 302.0
 scale = Vector2(10.64, 9.84)
 color = Color(0.0705882, 0.972549, 0.964706, 0.784314)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="PauseMenu/Panel"]
 layout_mode = 0
@@ -36,6 +38,7 @@ offset_right = 717.0
 offset_bottom = 292.0
 scale = Vector2(10.64, 9.84)
 color = Color(0.847198, 0.830575, 1, 0.32549)
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="PauseMenu/Panel"]
 layout_mode = 1
@@ -52,6 +55,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Game Paused"
+metadata/_edit_use_anchors_ = true
 
 [node name="Resume" type="Button" parent="PauseMenu/Panel"]
 layout_mode = 1
@@ -68,6 +72,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 text = "Resume"
+metadata/_edit_use_anchors_ = true
 
 [node name="Restart" type="Button" parent="PauseMenu/Panel"]
 layout_mode = 1
@@ -84,6 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 text = "Restart Game"
+metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="PauseMenu/Panel"]
 layout_mode = 1
@@ -100,6 +106,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 text = "Back to main menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="AbilityBar" type="CanvasLayer" parent="."]
 scale = Vector2(0.7, 0.7)
@@ -114,6 +121,7 @@ offset_bottom = 230.714
 value = 50.0
 texture_under = ExtResource("4_gfsug")
 texture_progress = ExtResource("5_w7g8i")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="AbilityBar"]
 z_index = -1
