@@ -12,16 +12,12 @@
 
 [node name="Player" parent="." node_paths=PackedStringArray("cloneArray") instance=ExtResource("1_nos0u")]
 position = Vector2(-335, 250)
-cloneArray = [NodePath("../Clone"), NodePath("../Clone2")]
+cloneArray = [NodePath("../Clone")]
 
 [node name="Clone" parent="." instance=ExtResource("2_d5djh")]
 position = Vector2(-998, 1722)
 
-[node name="Clone2" parent="." instance=ExtResource("2_d5djh")]
-position = Vector2(-1050, 1714)
-
 [node name="InGameUI" parent="." instance=ExtResource("1_ingameui")]
-visible = false
 
 [node name="PushableButton" parent="." instance=ExtResource("4_niitk")]
 position = Vector2(-166, 272)
