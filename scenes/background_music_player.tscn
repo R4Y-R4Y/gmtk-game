@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh6h1ocd4cekm"]
+
+[ext_resource type="AudioStream" uid="uid://dicyd2ob1sa2e" path="res://assets/Music/Theme/gmtkmenu25_v2.wav" id="1_sumlq"]
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_sumlq")
+autoplay = true

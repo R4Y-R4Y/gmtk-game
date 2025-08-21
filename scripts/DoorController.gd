@@ -8,7 +8,7 @@ extends Node2D
 @onready var AudioStreamPlayer2d : AudioStreamPlayer2D = $AudioStreamPlayer2D 
 
 var player_inside = false
-
+var player_won = false
 func _ready():
 	if door_enabled: 
 		AudioStreamPlayer2d.stream = load("res://assets/Music/sound/GMTK Science 2025Door Open_v2.wav")
@@ -23,12 +23,12 @@ func _enable_door():
 func _disable_door():
 	close_door()
 
-func _process(delta: float) -> void:
-	if door_enabled:
-		var overlapping_bodies = exitArea.get_overlapping_bodies()
-		for body in overlapping_bodies:
-			if body.is_in_group("player"):
-				instantiate_ui_win()
+func _on_player_entered(body):
+	if body.is_in_group("player") && door_enabled:
+		instantiate_ui_win()
+		door_enabled = false
+	elif body.is_in_group("player"):
+		player_inside = true
 
 func _on_player_exited(body):
 	if body.is_in_group("player"):
@@ -39,6 +39,8 @@ func open_door():
 	AudioStreamPlayer2d.stream = load("res://assets/Music/sound/GMTK Science 2025Door Open_v2.wav")
 	AudioStreamPlayer2d.play()
 	animatedSprite.play("open")
+	if (player_inside && door_enabled):
+		instantiate_ui_win()
 
 func close_door():
 	door_enabled = false
@@ -47,12 +49,16 @@ func close_door():
 	animatedSprite.play("close")
 	
 func instantiate_ui_win():
-	if ResourceLoader.exists(ui_win_scene_path):
+	var scene_exist = ResourceLoader.exists(ui_win_scene_path)
+	if scene_exist && !player_won:
+		player_won = true
+		get_tree().paused = true
 		var ui_win_scene = load(ui_win_scene_path)
 		var ui_win_instance = ui_win_scene.instantiate()
 		ui_win_instance.Number = level_number
 		get_tree().current_scene.add_child(ui_win_instance)
 		print("UiWin scene instantiated")
 	else:
-		print("UiWin scene not found at: ", ui_win_scene_path)
-		print("Please create the UiWin scene in the UI folder")
+		if !scene_exist:
+			print("UiWin scene not found at: ", ui_win_scene_path)
+			print("Please create the UiWin scene in the UI folder")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://e6vo05dd62fs"]
+[gd_scene load_steps=8 format=4 uid="uid://e6vo05dd62fs"]
 
 [ext_resource type="PackedScene" uid="uid://bfbj5jxc1poj4" path="res://scenes/characters/player.tscn" id="1_wi8i0"]
 [ext_resource type="PackedScene" uid="uid://waa8akjlrhci" path="res://scenes/characters/clone.tscn" id="2_reqmk"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cmbm7n2hpo0os" path="res://scenes/props/door.tscn" id="5_esddj"]
 [ext_resource type="PackedScene" uid="uid://cy4ew2ff8ptwc" path="res://scenes/props/pushable_button.tscn" id="6_5d6be"]
 [ext_resource type="PackedScene" uid="uid://dyfpsefsm2jl3" path="res://scenes/props/platform_tile_layer.tscn" id="7_flxei"]
-[ext_resource type="AudioStream" uid="uid://cws7ngkj3la2o" path="res://assets/Music/Theme/gmtklevel25_v2.wav" id="8_flxei"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -42,10 +41,6 @@ tile_map_data = PackedByteArray("AAAOAPT/AAAAAAIAAAAOAP7/AAAAAAMAAAAOAP3/AAAAAAI
 [node name="PlatformTileMapLayer2" parent="." instance=ExtResource("7_flxei")]
 tile_map_data = PackedByteArray("AAAMAAIAAAABAAAAAAALAAIAAAABAAAAAAAKAAIAAAABAAAAAAAJAAIAAAABAAAAAAAIAAIAAAABAAAAAAAHAAIAAAABAAAAAAAGAAIAAAABAAAAAAAFAAIAAAABAAAAAAAEAAIAAAAAAAAAAAANAAIAAAACAAAAAAA=")
 platform_enabled = false
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_flxei")
-autoplay = true
 
 [connection signal="button_pressed" from="PushableButton" to="PlatformTileMapLayer" method="disable"]
 [connection signal="button_pressed" from="PushableButton" to="PlatformTileMapLayer2" method="enable"]

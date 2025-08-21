@@ -43,6 +43,9 @@ public partial class Pause : CanvasLayer
 	public void OnBackPressed()
 	{
 		GetTree().Paused = false;
+		var audioPlayer = GetNode<AudioStreamPlayer2D>("/root/BackgroundMusicPlayer");
+		audioPlayer.Stream = GD.Load<AudioStream>("res://assets/Music/Theme/gmtkmenu25_v2.wav");
+		audioPlayer.Play();
 		GetTree().ChangeSceneToFile("res://scenes/UI/MainMenu.tscn");
 	}
 }

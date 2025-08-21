@@ -21,11 +21,3 @@ func disable():
 	AudioStreamPlayer2d.stream = load("res://assets/Music/sound/GMTK Science 2025Door Close_v2.wav")
 	AudioStreamPlayer2d.play()
 	return
-
-
-func _on_pushable_button_button_pressed() -> void:
-	pass # Replace with function body.
-
-
-func disabel() -> void:
-	pass # Replace with function body.

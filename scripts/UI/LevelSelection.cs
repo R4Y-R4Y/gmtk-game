@@ -19,6 +19,9 @@ public partial class LevelSelection : Control
 	private void OnLevelPressed(int levelNumber)
 	{
 		GD.Print($"Loading Level {levelNumber}");
+		var audioPlayer = GetNode<AudioStreamPlayer2D>("/root/BackgroundMusicPlayer");
+		audioPlayer.Stream = GD.Load<AudioStream>("res://assets/Music/Theme/gmtklevel25_v2.wav");
+		audioPlayer.Play();
 		GetTree().ChangeSceneToFile($"res://scenes/levels/level{levelNumber}.tscn");
 	}
 

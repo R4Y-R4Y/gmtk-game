@@ -737,6 +737,9 @@ color = Color(0.52549, 1, 1, 0.498039)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
+[node name="RecordingStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = 1.857
+
 [connection signal="pressed" from="Camera2D/Tab" to="Camera2D/Options Menu" method="_on_tab_pressed"]
 [connection signal="pressed" from="Camera2D/Options Menu/MarginContainer/VBoxContainer/UpdateSettings" to="Camera2D/Options Menu" method="_on_update_settings_pressed"]
 [connection signal="value_changed" from="Camera2D/Options Menu/MarginContainer/VBoxContainer/MaxSpeed" to="Camera2D/Options Menu" method="_on_max_speed_value_changed"]

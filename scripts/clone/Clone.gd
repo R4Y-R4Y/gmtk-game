@@ -27,10 +27,10 @@ func _ready():
 func _on_recording_finished(recording_data: Dictionary):
 	load_data = recording_data.duplicate()
 	start_playback()
-	
 
 func start_playback():
 	is_playing = true
+	collision.disabled = true
 	count = 0
 	playback_timer = 0.0
 	play_reverse = false
@@ -42,22 +42,16 @@ func _physics_process(_delta):
 	if is_playing:
 		get_recording()
 
-
-func destroy_player():
-	if player_reference and is_instance_valid(player_reference):
-		player_reference.queue_free()
-		player_reference = null
-		print("Player destroyed by clone!")
-
 func get_recording():
 	count += -1 if play_reverse else 1
 	var test = load_data.get(str(count))
 	if test != null:
+		if abs(count) < 10 && collision.disabled:
+			collision.disabled = false
 		ani.play(test[0])
 		global_position = str_to_var("Vector2" + str(test[1]))
 		ani.flip_h = !test[2] if play_reverse else test[2]
 	else:
-		# End of recording data
 		play_reverse = !play_reverse
 		print("Clone playback finished, repeating steps")
 	

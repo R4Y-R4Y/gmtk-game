@@ -11,7 +11,7 @@ script = ExtResource("1_kuiil")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_0flef")
-animation = &"falling"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0.675, -2.39)
 

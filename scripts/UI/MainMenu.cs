@@ -1,14 +1,12 @@
 using Godot;
 using System;
+using System.IO;
 
 public partial class MainMenu : Control
 {
 	public override void _Ready()
 	{
 		CreateParticleTexture();
-
-		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Play();
-
 		GetNode<Button>("/root/MainMenu/MainMenu/StartNewGame").Pressed += OnStartPressed;
 		GetNode<Button>("/root/MainMenu/MainMenu/LevelSelection").Pressed += OnLevelSelectionPressed;
 		GetNode<Button>("/root/MainMenu/MainMenu/Settings").Pressed += OnSettingsPressed;
@@ -47,35 +45,33 @@ public partial class MainMenu : Control
 	private void OnStartPressed()
 	{
 		GD.Print("Start Game");
-		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
+		var audioPlayer = GetNode<AudioStreamPlayer2D>("/root/BackgroundMusicPlayer");
+		audioPlayer.Stream = GD.Load<AudioStream>("res://assets/Music/Theme/gmtklevel25_v2.wav");
+		audioPlayer.Play();
 		GetTree().ChangeSceneToFile("res://scenes/levels/level1.tscn");
 	}
 
 	private void OnLevelSelectionPressed()
 	{
 		GD.Print("Level Selection");
-		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
 		GetTree().ChangeSceneToFile("res://scenes/UI/LevelSelection.tscn");
 	}
 
 	private void OnSettingsPressed()
 	{
 		GD.Print("Settings ⚙️");
-		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
 		GetTree().ChangeSceneToFile("res://scenes/UI/Settings.tscn");
 	}
 
 	private void OnCreditsPressed()
 	{
 		GD.Print("Credits");
-		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
 		GetTree().ChangeSceneToFile("res://scenes/UI/Credits.tscn");
 	}
 
 	private void OnExitPressed()
 	{
 		GD.Print("Exiting Game 🚀");
-		GetNode<AudioStreamPlayer2D>("/root/MainMenu/AudioStreamPlayer2D").Stop();
 		GetTree().Quit();
 	}
 }

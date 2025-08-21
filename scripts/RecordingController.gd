@@ -14,7 +14,7 @@ var UP : Vector2 = Vector2(0,-1)
 
 var currentClone : Clone
 var selected_clone_index : int = 0
-@onready var audioStreamPlayer2d : AudioStreamPlayer2D = $AudioStreamPlayer2D 
+@onready var audioStreamPlayer2d : AudioStreamPlayer2D = $RecordingStreamPlayer
 @onready var ani = $AnimatedSprite2D
 
 ##Period for recording player's actions in seconds
@@ -41,6 +41,14 @@ func select_next_clone():
 	print("Selected clone: ", selected_clone_index + 1, " of ", cloneArray.size())
 
 func _physics_process(delta: float) -> void:
+	if is_recording:
+		recording_timer += delta
+		count += 1
+		save_data[str(count)] = [ani.animation, global_position, ani.flip_h]
+		
+		if recording_timer >= recordingDuration:
+			stop_recording()
+	
 	super._physics_process(delta)
 	
 	if Input.is_action_just_pressed("select_clone"):
@@ -49,13 +57,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("record") and not is_recording:
 		start_recording()
 	
-	if is_recording:
-		recording_timer += delta
-		count += 1
-		save_data[str(count)] = [ani.animation, global_position, ani.flip_h]
-		
-		if recording_timer >= recordingDuration:
-			stop_recording()
 
 func start_recording():
 	recording_timer = 0.0
@@ -69,7 +70,7 @@ func start_recording():
 func stop_recording():
 	is_recording = false
 	print("Recording finished!")
-	
+	audioStreamPlayer2d.stop()
 	# Send signal only to the currently selected clone
 	if currentClone != null and is_instance_valid(currentClone):
 		currentClone._on_recording_finished(save_data)

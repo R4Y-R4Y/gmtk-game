@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpmpt431iloig"]
+[gd_scene load_steps=9 format=3 uid="uid://bpmpt431iloig"]
 
 [ext_resource type="Script" uid="uid://ci7xuygof50s2" path="res://scripts/UI/Pause.cs" id="1_pause"]
 [ext_resource type="Script" uid="uid://ctol1huoaiax4" path="res://scripts/UI/ability_bar.gd" id="3_1ukxy"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://kc3rylnsqola" path="res://assets/UI/abilitybar/front.png" id="5_w7g8i"]
 [ext_resource type="Texture2D" uid="uid://cuyf2bts01ivp" path="res://assets/UI/abilitybar/thing2.png" id="6_afid0"]
 [ext_resource type="Texture2D" uid="uid://x53510xe44gu" path="res://assets/UI/abilitybar/clonehead.png" id="7_afid0"]
-[ext_resource type="Script" path="res://scripts/UI/clones_count.gd" id="9_rued8"]
+[ext_resource type="Texture2D" uid="uid://b6vmvyjlc1idf" path="res://assets/UI/abilitybar/clonehead_selected.png" id="8_nkwu1"]
+[ext_resource type="Script" uid="uid://e3ap5n42gml4" path="res://scripts/UI/clones_count.gd" id="9_rued8"]
 
 [node name="InGameUI" type="CanvasLayer"]
 script = ExtResource("1_pause")
@@ -59,15 +60,15 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Resume" type="Button" parent="PauseMenu/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -34.5
-offset_top = -89.5
-offset_right = 35.5
-offset_bottom = -65.5
+anchors_preset = -1
+anchor_left = 0.521
+anchor_top = 0.432
+anchor_right = 0.521
+anchor_bottom = 0.432
+offset_left = -70.809
+offset_top = -23.608
+offset_right = -0.809021
+offset_bottom = 0.391998
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -76,32 +77,32 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Restart" type="Button" parent="PauseMenu/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -87.5
+anchors_preset = -1
+anchor_left = 0.520422
+anchor_top = 0.504128
+anchor_right = 0.521578
+anchor_bottom = 0.504128
+offset_left = -123.809
 offset_top = -19.5
-offset_right = 34.5
+offset_right = -1.80902
 offset_bottom = 4.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-text = "Restart Game"
+text = "Restart Level"
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="PauseMenu/Panel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -123.5
-offset_top = 60.5
-offset_right = 36.5
-offset_bottom = 84.5
+anchors_preset = -1
+anchor_left = 0.521
+anchor_top = 0.587
+anchor_right = 0.521
+anchor_bottom = 0.587
+offset_left = -159.809
+offset_top = -23.803
+offset_right = 0.190979
+offset_bottom = 0.19696
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -127,9 +128,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "R - Record Action
-E - Record using other clone
-Down Arrow / S - Enter Door
+E - Select Next Clone
+Esc - Pause Menu
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="AbilityBar"]
 offset_left = 237.357
@@ -155,6 +157,8 @@ theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("9_rued8")
 clone_texture = ExtResource("7_afid0")
+selected_clone_texture = ExtResource("8_nkwu1")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="PauseMenu/Panel/Resume" to="." method="OnResumePressed"]
 [connection signal="pressed" from="PauseMenu/Panel/Restart" to="." method="OnRestartPressed"]

@@ -22,9 +22,20 @@ func _on_body_entered(body):
 			press_button()
 
 func _on_body_exited(body):
-	print("Button released!")
-	animated_sprite.play("release")
-	button_released.emit()
+	# Check if there are still any player or clone bodies in the area
+	var overlapping_bodies = button_area.get_overlapping_bodies()
+	var still_has_valid_bodies = false
+
+	for overlapping_body in overlapping_bodies:
+		if overlapping_body.is_in_group("player") or overlapping_body.is_in_group("clones"):
+			print( "Clone" if overlapping_body.is_in_group("player") else "Player" + "still on button")
+			return
+
+	# Only release the button if no valid bodies are still on it
+	if not still_has_valid_bodies and is_pressed:
+		print("Button released!")
+		animated_sprite.play("release")
+		button_released.emit()
 	is_pressed = false
 
 func press_button():
