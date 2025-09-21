@@ -46,7 +46,7 @@ func get_recording():
 	count += -1 if play_reverse else 1
 	var test = load_data.get(str(count))
 	if test != null:
-		if abs(count) < 10 && collision.disabled:
+		if abs(count) < 20 && collision.disabled:
 			collision.disabled = false
 		ani.play(test[0])
 		global_position = str_to_var("Vector2" + str(test[1]))
